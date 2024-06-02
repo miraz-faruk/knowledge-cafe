@@ -5,9 +5,9 @@ const Blog = ({ blog }) => {
     return (
         <div>
             <img src={cover} alt={`cover picture of the title ${title}`} />
-            <div className='flex justify-between items-center'>
-                <div className='flex gap-5'>
-                    <img src={author_img} alt={`author image`} />
+            <div className='flex justify-between items-center mt-9 mb-4'>
+                <div className='flex gap-6 items-center'>
+                    <img className='w-16 rounded-full' src={author_img} alt={`author image`} />
                     <div>
                         <h2>{author}</h2>
                         <p>{posted_date}</p>
