@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
+import { CiBookmark } from "react-icons/ci";
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleAddToBookmark }) => {
     const { title, cover, author_img, reading_time, author, posted_date, hashtag } = blog;
     return (
         <div>
@@ -13,8 +14,9 @@ const Blog = ({ blog }) => {
                         <p>{posted_date}</p>
                     </div>
                 </div>
-                <div>
+                <div className='flex items-center gap-6'>
                     <span>{reading_time} min read</span>
+                    <button onClick={handleAddToBookmark} className='text-xl'><CiBookmark /></button>
                 </div>
             </div>
             <h1 className="text-4xl">{title}</h1>
