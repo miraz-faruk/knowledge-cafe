@@ -4,24 +4,24 @@ import { CiBookmark } from "react-icons/ci";
 const Blog = ({ blog, handleAddToBookmark, handleMarkAsRead }) => {
     const { title, cover, author_img, reading_time, author, posted_date, hashtag } = blog;
     return (
-        <div>
-            <img className='w-full' src={cover} alt={`cover picture of the title ${title}`} />
-            <div className='flex justify-between items-center mt-9 mb-4'>
+        <div className='border-b-2 mb-10 pb-10'>
+            <img className='w-full rounded-lg' src={cover} alt={`cover picture of the title ${title}`} />
+            <div className='flex justify-between items-center mt-8 mb-4'>
                 <div className='flex gap-6 items-center'>
                     <img className='w-16 rounded-full' src={author_img} alt={`author image`} />
                     <div>
-                        <h2>{author}</h2>
-                        <p>{posted_date}</p>
+                        <h2 className='text-2xl'>{author}</h2>
+                        <p className='text-[#11111199] font-semibold'>{posted_date}</p>
                     </div>
                 </div>
-                <div className='flex items-center gap-6'>
+                <div className='flex items-center gap-3 text-[#11111199] font-medium text-xl'>
                     <span>{reading_time} min read</span>
-                    <button onClick={() => handleAddToBookmark(blog)} className='text-xl'><CiBookmark /></button>
+                    <button onClick={() => handleAddToBookmark(blog)}><CiBookmark /></button>
                 </div>
             </div>
-            <h1 className="text-4xl">{title}</h1>
-            <p><a href="">{hashtag}</a></p>
-            <button onClick={() => handleMarkAsRead(reading_time)}>Mark as read</button>
+            <h1 className="text-[40px] font-bold mb-4">{title}</h1>
+            <p className='mb-5'><a href="">{hashtag}</a></p>
+            <button className='text-[#6047EC] text-xl font-semibold underline' onClick={() => handleMarkAsRead(reading_time)}>Mark as read</button>
         </div>
     );
 };
